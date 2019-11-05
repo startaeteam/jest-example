@@ -16,6 +16,7 @@ class CalculatorDisplay extends React.Component {
 
     return (
       <div
+        id="hi"
         {...props}
         css={{
           color: 'white',
@@ -25,7 +26,9 @@ class CalculatorDisplay extends React.Component {
           flex: '1',
         }}
       >
-        <AutoScalingText>{formattedValue}</AutoScalingText>
+        <span>
+          <AutoScalingText>{formattedValue}</AutoScalingText>
+        </span>      
       </div>
     )
   }
