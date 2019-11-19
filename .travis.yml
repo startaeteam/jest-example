@@ -1,11 +1,18 @@
 language: node_js
+notifications:
+  email: startae14@gmail.com
+node_js:
+  - "stable"
+install: npm install
 cache:
   directories:
+    - node_modules
     - ~/.npm
-notifications:
-  email: false
-node_js: '8'
-install: npm install
-script: npm run validate
-branches:
-  only: master
+    - ~/.cache
+before_script:
+  - npm install
+script:
+  - npm test
+  - npm run build
+  - npm run validate
+after_script: npx codecov@3
